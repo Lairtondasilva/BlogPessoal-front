@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { Facebook, Instagram, LinkedIn, Twitter } from "@material-ui/icons";
 import { Box } from "@mui/material";
 import './Footer.css'
@@ -11,16 +11,20 @@ function Footer() {
           <Grid item xs={10} className='footer'>
             <Box className='content'>
               <Box>
-                <span>Privace Police</span>
+              <Typography color='secondary'>
+                  Privace Police
+                </Typography>
               </Box>
               <Box className="icons">
-                <Facebook/>
-                <Twitter/>
-                <LinkedIn/>
-                <Instagram/>
+                <Facebook color="secondary"/>
+                <Twitter color="secondary"/>
+                <LinkedIn color="secondary"/>
+                <Instagram color="secondary"/>
               </Box>
-              <Box>
-                Generation
+              <Box color='secondary'>
+                <Typography color='secondary'>
+                  Generation
+                </Typography>
               </Box>
             </Box>
           </Grid>

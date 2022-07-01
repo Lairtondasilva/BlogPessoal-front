@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 function Navbar() {
@@ -7,8 +8,8 @@ function Navbar() {
     <AppBar position="static"  color='primary'>
       <Toolbar variant='dense' className='toolbar' >
           <Box className='logo'>
-            <Typography variant="h5" >
-              <span className='primary'>LS</span>-DEV
+            <Typography variant="h5" color='textPrimary' >
+              <Typography variant='h5' component='span' color='textSecondary'>LS</Typography>-DEV
             </Typography>
           </Box>
         <Box className='nav' >
@@ -33,9 +34,11 @@ function Navbar() {
             </Typography>
           </Box>
           <Box className='navItem'>
-            <Typography variant="h5" >
-              Logout
-            </Typography>
+            <Link to='/login' className='text-decoration-none'>
+              <Typography variant="h5" color='secondary' >
+                Logout
+              </Typography>
+            </Link>
           </Box>
         </Box> 
       </Toolbar>

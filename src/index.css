@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #0D111A;
   box-sizing: border-box;
-  color: #d9d9d9
 }
 
 code {
@@ -27,12 +26,4 @@ h1{
   text-align: center;
   width:740px;
   border-left: 1px solid #d9d9d9;
-}
-
-.primary{
-  color:#24B166;
-}
-
-.secondary{
-  color:#d9d9d9;
 }

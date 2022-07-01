@@ -11,11 +11,11 @@ function Home() {
             <Box className='container'>
               <Box className="title">
                 <Typography variant="h1" >
-                  Seja bem vindo(a) ao seu blog <span className="primary">Pessoal.</span>
+                  Seja bem vindo(a) ao seu blog <Typography component='span' variant='h2' color="primary">Pessoal.</Typography>
                 </Typography>
               </Box>
               <Box className='subtitle'>
-              <Typography variant="h4" className="secondary sub">
+              <Typography variant="h4" color="secondary">
                  Expresse aqui os seus pensamentos e opiniões!
                 </Typography>
               </Box>
@@ -28,7 +28,6 @@ function Home() {
               </Button>
               </Box>
             </Box>
-            
           </Grid>
       </Grid>
     </>

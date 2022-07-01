@@ -31,10 +31,6 @@
   animation: surgir 1s ease-in forwards;
   animation-delay:2s;
 }
-.sub{
-  font-weight: 400 !important;
-  font-size: 24px !important;
-}
 .btn_C{
   display:flex;
   gap: 32px;

@@ -22,6 +22,9 @@
   color: #24B166;
   cursor: pointer;
 }
+.text-decoration-none{
+  text-decoration:none;
+}
 
 @keyframes rotacion{
   0%{
