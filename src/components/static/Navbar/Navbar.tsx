@@ -33,9 +33,9 @@ function Navbar() {
               CadastrarTema
             </Typography>
           </Box>
-          <Box className='navItem'>
+          <Box>
             <Link to='/login' className='text-decoration-none'>
-              <Typography variant="h5" color='secondary' >
+              <Typography variant="h5" color='secondary' className='navItem'>
                 Logout
               </Typography>
             </Link>
