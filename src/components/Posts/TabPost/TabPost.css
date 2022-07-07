@@ -1,0 +1,11 @@
+.text-decorator-none{
+  text-decoration: none;
+}
+.MuiAppBar-colorPrimary{
+  background-color: transparent !important;
+  border-bottom: 2px solid #d8d8d8 !important;
+}
+.MuiTab-textColorInherit {
+  color: #d8d8d8 !important;
+  /* opacity: 0.7; */
+}
