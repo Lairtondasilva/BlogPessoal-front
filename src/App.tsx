@@ -1,9 +1,9 @@
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import ListaPostagem from './components/Posts/listaPostagens/ListaPostagem';
+import ListaPostagem from './components/Posts/listaPostagem/ListaPostagem';
 import Footer from './components/static/Footer/Footer';
 import Navbar from './components/static/Navbar/Navbar';
-import ListaTema from './components/Temas/ListaTemas/ListaTema';
+import ListaTema from './components/Temas/listaTema/ListaTema';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import RegisterUser from './pages/RegisterUser/RegisterUser';
