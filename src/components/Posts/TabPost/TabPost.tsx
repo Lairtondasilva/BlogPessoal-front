@@ -1,9 +1,9 @@
 import {useState} from 'react'
 import { AppBar, Tab, Tabs, Typography} from '@material-ui/core';
 import { TabContext, TabPanel } from '@material-ui/lab';
-import PostList from '../PostList/PostList';
 import './TabPost.css';
 import { Box } from '@mui/material';
+import ListaPostagem from '../listaPostagens/ListaPostagem';
 
 
 function TabPost() {
@@ -22,7 +22,7 @@ function TabPost() {
         </AppBar>
         <TabPanel value="1" >
           <Box display="flex" flexWrap="wrap" justifyContent="center">
-            <PostList />
+            <ListaPostagem />
           </Box>
         </TabPanel>
         <TabPanel value="2">

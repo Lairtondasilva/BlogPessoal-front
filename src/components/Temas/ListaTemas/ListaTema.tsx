@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import './ListTheme.css';
+import './ListaTema.css';
 import { Box } from '@mui/material';
 
-function ListTheme() {
+function ListaTema() {
 
   return (
     <>
@@ -43,4 +43,4 @@ function ListTheme() {
 }
 
 
-export default ListTheme;
+export default ListaTema;

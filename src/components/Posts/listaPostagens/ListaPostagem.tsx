@@ -1,10 +1,10 @@
 
 import { Link } from 'react-router-dom'
 import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import './PostList.css';
+import './ListaPostagem.css';
 import { Box } from '@mui/material';
 
-function PostList() {
+function ListaPostagem() {
 
   return (
     <>
@@ -48,4 +48,4 @@ function PostList() {
     </>)
 }
 
-export default PostList;
+export default ListaPostagem;
