@@ -12,14 +12,14 @@ function RegisterUser() {
   const [user, setUser] = useState<User>({
     id: 0,
     nome:'',
-    usuario:'',
-    senha:''
+    login:'',
+    senha:'',
   });
   const [userResult, setUserResult] = useState<User>({
     id: 0,
     nome:'',
-    usuario:'',
-    senha:''
+    login:'',
+    senha:'',
   });
 
   useEffect(()=>{
@@ -69,7 +69,7 @@ function RegisterUser() {
             <form style={{width:'500px', margin:'0 auto'}} onSubmit={(e: ChangeEvent<HTMLFormElement>)=>{cadastro(e)}}>
               <Box display='flex' flexDirection='column' gap='24px' alignItems='center'>
                 <TextField value={user.nome} id='nome' name='nome' label="nome" variant='outlined' color='primary' fullWidth onChange={(e:ChangeEvent<HTMLInputElement>)=>handleInputChange(e)}/>
-                <TextField value={user.usuario} id='usuario' name='usuario' label="usuario" variant='outlined' color='primary' fullWidth onChange={(e:ChangeEvent<HTMLInputElement>)=>handleInputChange(e)}/>
+                <TextField value={user.login} id='usuario' name='login' label="usuario" variant='outlined' color='primary' fullWidth onChange={(e:ChangeEvent<HTMLInputElement>)=>handleInputChange(e)}/>
                 <TextField value={user.senha} id='senha' name='senha' label="Senha" variant='outlined' color='primary' fullWidth onChange={(e:ChangeEvent<HTMLInputElement>)=>handleInputChange(e)} />
                 <TextField value={confirmarSenha} id='confirmarSenha' name='confirmarSenha' label="Confirmar Senha" variant='outlined' color='primary' fullWidth onChange={(e:ChangeEvent<HTMLInputElement>)=>handlePasswordConfirmChange(e)}/>
                 {/* <Link to='/home' className='text-decorator-none'>

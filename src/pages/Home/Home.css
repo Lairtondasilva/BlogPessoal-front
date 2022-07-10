@@ -51,7 +51,7 @@
 
 @keyframes correr{
   0%{
-    width: 102%;
+    width: 100%;
   }
   100%{
     width:0;

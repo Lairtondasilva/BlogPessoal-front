@@ -1,10 +1,12 @@
 import { Button, Grid, Typography } from "@material-ui/core"
 import { Box } from "@mui/material"
-import TabPost from "../../components/Posts/TabPost/TabPost"
+import { useNavigate } from "react-router-dom"
+import TabPost from "../../components/postagens/TabPost/TabPost"
 import './Home.css'
 
 
 function Home() {
+  const navigation = useNavigate();
   return (
     <>
       <Grid container className="home">
@@ -21,7 +23,7 @@ function Home() {
                 </Typography>
               </Box>
               <Box className="btn_C">
-              <Button variant="outlined" className="btn">
+              <Button variant="outlined" className="btn" onClick={()=>{navigation('/formularioPostagem')}}>
                 Nova Postagem
               </Button>
               <Button variant="outlined" className="btn">
