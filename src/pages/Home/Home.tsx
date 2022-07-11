@@ -1,12 +1,26 @@
 import { Button, Grid, Typography } from "@material-ui/core"
 import { Box } from "@mui/material"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem"
 import TabPost from "../../components/postagens/TabPost/TabPost"
+import { TokenState } from "../../store/tokens/tokensReducer"
 import './Home.css'
 
 
 function Home() {
   const navigation = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+  useEffect(() => {
+    if (token == "") {
+        alert("Você precisa estar logado")
+        navigation("/login")
+
+    }
+}, [navigation, token])
   return (
     <>
       <Grid container className="home">
@@ -23,9 +37,7 @@ function Home() {
                 </Typography>
               </Box>
               <Box className="btn_C">
-              <Button variant="outlined" className="btn" onClick={()=>{navigation('/formularioPostagem')}}>
-                Nova Postagem
-              </Button>
+              <ModalPostagem/>
               <Button variant="outlined" className="btn">
                 Ver Postagens
               </Button>

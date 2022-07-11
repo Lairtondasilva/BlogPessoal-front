@@ -1,20 +1,22 @@
 import { Button, Grid, Paper, TextField, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import { ChangeEvent, useEffect, useState} from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
-import { CatchClause } from 'typescript';
 import UserLogin from '../../models/UserLogin';
 import {login} from '../../services/service';
+import { addToken } from '../../store/tokens/actions';
 import './Login.css'
 
 
 function Login() {
   let navigate = useNavigate();
-  const [token, setToken] = useLocalStorage('token');
+  const dispatch = useDispatch();
+  const [token, setToken] = useState('');
 
   useEffect(()=>{
       if(token !== ''){
+        dispatch(addToken(token))
         navigate('/home')
       }
   }, [navigate, token])
