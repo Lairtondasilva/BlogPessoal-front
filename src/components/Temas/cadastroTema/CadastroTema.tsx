@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroTema() {
     const navigation = useNavigate();
@@ -25,7 +26,6 @@ function CadastroTema() {
     },[token])
 
     useEffect(()=>{
-        console.log("id:"+id)
         if(id !== undefined){
             findById(id)
         }
@@ -50,13 +50,19 @@ function CadastroTema() {
             put(`/temas/${id}`,tema,setTema,{headers:{
                 'Authorization': token
             }})
-            alert('tema atualizado')
+            toast.success('tema atualizado com sucesso')
             navigation('/themes')
         }else{
             post('/temas',tema, setTema, {headers:{
                 'Authorization' : token
             }})
-            alert("cadastrado com sucesso!!")
+            toast.success("cadastrado com sucesso!!",{
+                theme: "dark",
+                hideProgressBar: true,
+                position: "bottom-left",
+                closeOnClick: false,
+                autoClose: 2000,
+            })
             navigation('/themes')
         }
     }

@@ -7,6 +7,7 @@ import Tema from '../../../models/Tema';
 import { buscaId, deleteId } from '../../../services/service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
@@ -40,6 +41,13 @@ function DeletarTema() {
       deleteId(`/temas/${id}`,{headers:{
         'Authorization' : token
       }})
+      toast.success("tema deletado com sucesso",{
+        theme: "dark",
+        hideProgressBar: true,
+        position: "bottom-left",
+        closeOnClick: false,
+        autoClose: 2000,
+      })
       navigation('/themes')
     }
     const deleteNO = ()=>{

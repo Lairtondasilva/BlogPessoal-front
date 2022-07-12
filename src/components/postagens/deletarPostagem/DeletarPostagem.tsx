@@ -7,6 +7,7 @@ import { buscaId, deleteId } from '../../../services/service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function DeletarPostagem() {
   const navigation = useNavigate();
@@ -38,6 +39,13 @@ function DeletarPostagem() {
     deleteId(`/postagens/${id}`,{headers:{
       'Authorization' : token
     }})
+    toast.success('postagem deletada com sucesso',{
+      theme: "dark",
+      hideProgressBar: true,
+      position: "bottom-left",
+      closeOnClick: false,
+      autoClose: 2000,
+    })
     navigation('/posts')
   }
   const deleteNO = ()=>{

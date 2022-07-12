@@ -1,4 +1,5 @@
 import axios, { Axios } from 'axios';
+import { toast } from 'react-toastify';
 
 export const api = axios.create(
 {
@@ -15,10 +16,22 @@ export const login = async (url: any, dados: any, setDados: any)=>{
   try{
     const response = await api.post(url, dados);
     setDados(response.data.token);
-    alert('login feito com sucesso')
+    toast.success('login feito com sucesso',{
+      theme: "dark",
+      hideProgressBar: true,
+      position: "bottom-left",
+      closeOnClick: false,
+      autoClose: 2000,
+    })
   }
   catch(e){
-    alert('Dados inconsistentes')
+    toast.warning('Dados inconsistentes',{
+      theme: "dark",
+      hideProgressBar: true,
+      position: "bottom-left",
+      closeOnClick: false,
+      autoClose: 2000,
+    })
   }
 }
 

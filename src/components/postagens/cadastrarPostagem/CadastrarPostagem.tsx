@@ -2,12 +2,12 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastrarPostagem.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/service';
 import Tema from '../../../models/Tema';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
     //faz a navegação
@@ -21,7 +21,13 @@ function CadastroPostagem() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.info('Usuário precisa está logado',{
+                theme: "dark",
+                hideProgressBar: true,
+                position: "bottom-left",
+                closeOnClick: false,
+                autoClose: 2000,
+            })
             navigation("/login")
 
         }
@@ -89,14 +95,26 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada com sucesso',{
+                theme: "dark",
+                hideProgressBar: true,
+                position: "bottom-left",
+                closeOnClick: false,
+                autoClose: 2000,
+            });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada com sucesso',{
+                theme: "dark",
+                hideProgressBar: true,
+                position: "bottom-left",
+                closeOnClick: false,
+                autoClose: 2000,
+            });
         }
         back()
     }

@@ -3,6 +3,7 @@ import { Box } from "@mui/material"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem"
 import TabPost from "../../components/postagens/TabPost/TabPost"
 import { TokenState } from "../../store/tokens/tokensReducer"
@@ -16,7 +17,13 @@ function Home() {
   );
   useEffect(() => {
     if (token == "") {
-        alert("Você precisa estar logado")
+        toast.info("Você precisa estar logado",{
+          theme: "dark",
+          hideProgressBar: true,
+          position: "bottom-left",
+          closeOnClick: false,
+          autoClose: 2000,
+        })
         navigation("/login")
 
     }
