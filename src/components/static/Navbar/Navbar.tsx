@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { addToken } from '../../../store/tokens/actions';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import './Navbar.css'
@@ -16,6 +17,12 @@ function Navbar() {
   const navigation = useNavigate();
   useEffect(()=>{
     if(token == ''){
+      toast.info("usuario deslogado",{
+        theme: "dark",
+        position: "bottom-left",
+        autoClose: 2000,
+        closeOnClick: false,
+      })
       navigation('/login')
     }
   },[token])
