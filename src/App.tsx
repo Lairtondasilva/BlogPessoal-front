@@ -6,16 +6,16 @@ import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPosta
 import ListaPostagem from './components/postagens/listaPostagem/ListaPostagem';
 import Footer from './components/static/Footer/Footer';
 import Navbar from './components/static/Navbar/Navbar';
-import DeletarTema from './components/temas/deletarTema/DeletarTema';
-import ListaTema from './components/temas/listaTema/ListaTema';
+import ListaTema from './components/Temas/listaTema/ListaTema';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import RegisterUser from './pages/RegisterUser/RegisterUser';
 import store from './store/store';
 import 'react-toastify/dist/ReactToastify.css'
-import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import CadastroTema from './components/Temas/cadastroTema/CadastroTema';
 import Theme from './Theme/Theme';
 import { ThemeProvider } from '@material-ui/core';
+import DeletarTema from './components/Temas/deletarTema/DeletarTema';
 
 
 function App() {
