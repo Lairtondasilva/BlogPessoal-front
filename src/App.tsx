@@ -6,7 +6,6 @@ import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPosta
 import ListaPostagem from './components/postagens/listaPostagem/ListaPostagem';
 import Footer from './components/static/Footer/Footer';
 import Navbar from './components/static/Navbar/Navbar';
-import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaTema from './components/temas/listaTema/ListaTema';
 import Home from './pages/Home/Home';
@@ -14,12 +13,16 @@ import Login from './pages/Login/Login';
 import RegisterUser from './pages/RegisterUser/RegisterUser';
 import store from './store/store';
 import 'react-toastify/dist/ReactToastify.css'
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import Theme from './Theme/Theme';
+import { ThemeProvider } from '@material-ui/core';
 
 
 function App() {
   return (
     <Provider store={store}>
       <ToastContainer/>
+       <ThemeProvider  theme={Theme}>
       <Router>
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
@@ -40,6 +43,7 @@ function App() {
         </div>
         <Footer />
       </Router>
+  </ThemeProvider>
     </Provider>
   );
 }
