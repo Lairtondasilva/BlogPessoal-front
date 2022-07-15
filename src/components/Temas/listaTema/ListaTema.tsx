@@ -35,8 +35,8 @@ function ListaTema() {
     <>
       {temas.map(tema=>{
         return(
-          <Box m={2} >
-        <Card variant="outlined" key={tema.id}>
+          <Box m={2} key={tema.id}>
+        <Card variant="outlined">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Tema

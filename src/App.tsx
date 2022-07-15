@@ -1,4 +1,3 @@
-
 import { Provider } from 'react-redux';
 import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';

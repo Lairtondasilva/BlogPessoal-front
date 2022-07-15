@@ -23,7 +23,7 @@ function CadastroTema() {
         if(token===''){
             navigation('/login')
         }
-    },[token])
+    },[navigation, token])
 
     useEffect(()=>{
         if(id !== undefined){
