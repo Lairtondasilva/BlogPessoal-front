@@ -3,7 +3,7 @@ import { createTheme } from "@material-ui/core";
 const Theme = createTheme({
   palette: {
     background:{
-      paper: '#0D111A'
+      paper: '#ffffff'
     },
     primary: {
       main: '#24d166',
@@ -55,6 +55,11 @@ const Theme = createTheme({
         '& fieldSet':{
           borderColor:'#d8d8d8',
         }
+      }
+     },
+     MuiDialog:{
+      root:{
+
       }
      }
   },

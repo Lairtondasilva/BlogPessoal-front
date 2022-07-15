@@ -2,6 +2,7 @@ import { Button, Grid, Paper, TextField, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import User from '../../models/User';
 import { cadastrar } from '../../services/service';
 import './RegisterUser.css'
@@ -54,7 +55,13 @@ function RegisterUser() {
       await cadastrar('/usuarios/cadastrar', user, setUserResult);
     }
     catch(error : any ){
-      alert(error.message)
+      toast.warning('Dados inconsistentes',{
+        theme: "dark",
+        hideProgressBar: true,
+        position: "bottom-left",
+        closeOnClick: false,
+        autoClose: 2000,
+      })
     }
   }
 
@@ -86,7 +93,7 @@ function RegisterUser() {
                 </Typography>
               </Box>
               <Box>
-                  <Link to='/register' className='text-decorator-none'>
+                  <Link to='/login' className='text-decorator-none'>
                     <Typography color='secondary'>
                       faça Login
                     </Typography> 
