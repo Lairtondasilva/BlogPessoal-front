@@ -20,7 +20,7 @@ function Login() {
         dispatch(addToken(token))
         navigate('/home')
       }
-  }, [navigate, token])
+  }, [token])
   
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id:0,

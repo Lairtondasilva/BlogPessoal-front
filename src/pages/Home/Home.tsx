@@ -16,7 +16,7 @@ function Home() {
     (state) => state.tokens
   );
   useEffect(() => {
-    if (token == "") {
+    if (token === "") {
         toast.info("Você precisa estar logado",{
           theme: "dark",
           hideProgressBar: true,
